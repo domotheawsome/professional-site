@@ -1,0 +1,58 @@
+---
+title: "Building Reliable Distributed Systems"
+date: "2026-03-15"
+summary: "Lessons learned from building distributed systems that handle failures gracefully — from retries and idempotency to circuit breakers."
+---
+
+Distributed systems are hard. Over the past few years I've built several systems that needed to handle partial failures, network partitions, and eventual consistency. Here's what I've learned.
+
+## Start with Idempotency
+
+The single most important property in a distributed system is **idempotency**. If an operation can be safely retried without changing the result, you can solve a huge class of failure modes with simple retries.
+
+Every write endpoint I build now accepts an idempotency key. The implementation is straightforward:
+
+```
+POST /api/payments
+Idempotency-Key: abc-123
+
+{
+  "amount": 5000,
+  "currency": "usd"
+}
+```
+
+If the request fails mid-flight, the client retries with the same key, and the server returns the original result instead of creating a duplicate.
+
+## Circuit Breakers Save You at 3 AM
+
+When a downstream service goes down, the worst thing you can do is keep hammering it. Circuit breakers detect failure patterns and **fail fast** instead of waiting for timeouts.
+
+I use a simple three-state model:
+
+- **Closed** — requests flow normally, failures are counted
+- **Open** — requests fail immediately, no calls to the downstream service
+- **Half-Open** — a single probe request is allowed through to test recovery
+
+The key insight is that circuit breakers protect *your* service as much as the downstream one. Without them, a single slow dependency can cascade and take down everything.
+
+## Retries Need Backoff
+
+Naive retries are worse than no retries. If a service is overloaded and 100 clients all retry immediately, you've just amplified the problem.
+
+Use **exponential backoff with jitter**:
+
+```
+delay = min(base * 2^attempt + random_jitter, max_delay)
+```
+
+The jitter is critical — without it, retries from multiple clients synchronize and create thundering herds.
+
+## What I Wish I Knew Earlier
+
+- **Timeouts are mandatory.** Every network call needs a timeout. Every. Single. One.
+- **Log correlation IDs.** Pass a request ID through every service call so you can trace failures across the system.
+- **Design for partial failure.** The question isn't *if* something will fail, but *when*.
+- **Test the failure paths.** Use chaos engineering tools to inject failures in staging. The happy path will work fine — it's the error paths that surprise you.
+
+Building reliable systems isn't about preventing failures. It's about building systems that **degrade gracefully** when things go wrong.

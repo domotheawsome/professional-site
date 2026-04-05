@@ -1,0 +1,86 @@
+---
+title: "Three Teams, Two Years, One Career Direction"
+date: "2026-03-25"
+summary: "Reflections on finishing a rotational engineering program — the technical work, the context switching, and the things that actually stuck."
+---
+
+I just finished the CORE rotational program at Comcast NBCUniversal. Two years, three rotations, three completely different engineering disciplines. The whole point of a rotational program is to put you somewhere new and see what you do with it — and I was genuinely excited to find out.
+
+Now that I've landed in a permanent role, I've been thinking about what the experience actually gave me — beyond the resume lines.
+
+## Rotation 1: UX Engineering at Peacock
+
+Starting in UX was exactly the kind of unfamiliar territory I was looking for. My background was backend-leaning, and jumping into a design-heavy team building Peacock's core mobile video player felt like a deliberate stretch — which is the whole point.
+
+The work was deeply engineering-intensive. I built interactive prototypes in React and Swift for all viewing orientations — production-quality code being stress-tested by design and product teams, not throwaway mockups. The player serves 10M+ active users, so every decision had real weight.
+
+I also built an analytics pipeline that automated visual merchandising performance tracking end-to-end, cutting reporting latency by 90%, and shipped an AI-assisted code review tool that ended up being adopted by 20+ designers.
+
+What this rotation reinforced was how much serious engineering judgment lives inside design-adjacent work. It's not just "make it look right." It's state management, animation performance, component APIs that non-engineers can actually use. The overlap between design and engineering is where some of the most interesting problems live.
+
+## Rotation 2: AI Engineering at Universal Creative
+
+If the first rotation broadened how I thought about the product surface, this one sharpened how I thought about infrastructure. The team was building AI products across theme parks and live experiences — a domain with no obvious playbook, which made it one of the more energizing environments I've worked in.
+
+The main thread of my work was getting agentic AI tooling to a place where different teams could actually use it without rebuilding from scratch each time. I built a standardized integration pattern using Codex and Agents SDK that cut new project onboarding by 60%. I also contributed to multi-agent orchestration infrastructure that brought deployment time from weeks down to days, and built an NLP extraction pipeline using spaCy that improved ingestion accuracy by 35%.
+
+What this rotation drove home: the hard part of AI engineering is rarely the model. It's everything around it — reliable data pipelines, sensible abstractions, infrastructure that doesn't fall over when the input changes. The teams shipping the fastest weren't the ones with the smartest models. They were the ones with the most boring, reliable infrastructure underneath.
+
+## Rotation 3: ML Engineering at T&P
+
+My final rotation was the most technically demanding, and the one that convinced me this is where I want to be.
+
+I built a RAG-powered AI agent designed to help network engineers trace root causes in complex telecom systems — with multi-modal document ingestion, vector retrieval, and hybrid search. The target was ambitious: cut investigation time by 85% compared to manual analysis. We hit it.
+
+I also designed an evaluation framework from scratch — a tree-gated scoring pipeline with an LLM-as-judge layer on AWS Bedrock and instrumentation across seven quality dimensions. Getting that right took iteration, but it meaningfully reduced false-positive tool selections and gave the team a repeatable way to measure improvement.
+
+One moment that stands out: I diagnosed a systemic RF attenuation drift defect across 100+ FDX smart amplifiers. The root cause — volatile gNMI state being misused as a restoration baseline — only became visible when you looked at the pattern across devices rather than debugging each one in isolation. That kind of cross-device pattern recognition was only possible because we had the right tooling to surface it.
+
+## What the Rotations Actually Taught Me
+
+The technical work is the easy part to write about. Here's what I actually carry forward:
+
+### Ramping up fast becomes a skill
+
+The first two weeks of each rotation felt like drinking from a fire hose. New codebase, new domain, new team dynamics, new expectations. By the third rotation, I had a system: week one is reading and listening, week two is small contributions and lots of questions, week three you're adding real value.
+
+Most engineers go deep on one stack early on. Rotational programs make you practice the ramp. And it turns out that capability — getting productive in an unfamiliar environment — transfers everywhere. Every job change, every new team, every greenfield project is a version of this. Having done it three times in two years made the anxiety around it basically disappear.
+
+### Teams have personalities, and reading them is a skill too
+
+At Peacock, iteration was fast. Designers were in the room, decisions happened in days. At Universal Creative, the work was more exploratory — longer timelines, more ambiguity, more "we'll know it when we see it." At T&P, the stakeholders were engineers themselves, which meant the conversations were more technical and the expectations around precision were higher.
+
+Learning to read a team's rhythm — how decisions actually get made, who the informal owners are, what "done" means in this specific context — is something most people figure out slowly over years. I got three compressed reps of it back to back. Now I can walk into a new team and orient myself much faster.
+
+### You figure out who you are as an engineer
+
+I came into the program thinking I might want to work closer to the product surface. After three rotations, I know I'm most energized by infrastructure — the systems underneath that make everything else reliable. I wouldn't have known that without being pushed somewhere unfamiliar.
+
+Early in a career, you don't have enough data points to distinguish what you actually enjoy from what you think you should enjoy. The rotational program gave me that clarity faster than I would have found it on my own.
+
+### The network is genuinely underrated
+
+By the end of the program, I had real relationships across Peacock, Universal Creative, and T&P. When I needed design input during my AI rotation, I had someone from Peacock to call. When I wanted to understand how agents were actually being used by end teams, I had a direct line into Universal Creative.
+
+In a company the size of Comcast, most people's network stays close to their immediate team. Cross-organizational relationships are rare and valuable. The rotational program builds them as a side effect.
+
+### Being the newest person on the team is worth practicing
+
+In a typical role, expertise compounds over time and you get progressively more comfortable. In a rotation, you reset every eight months. You're perpetually the person who doesn't know where things are or why decisions were made the way they were.
+
+That's uncomfortable. It's also really good practice. You learn to ask better questions, to earn trust without leaning on history, to move fast without context you'd normally rely on. I've worked with senior engineers who've been on the same team for four years and still visibly struggle when the environment changes. Rotating builds the flexibility that makes you useful in more situations.
+
+### A deadline you can't extend changes how you scope
+
+You can't spend three months on something when the rotation ends in eight. Every project had to answer: what's the smallest version of this that actually matters?
+
+That's a mindset shift. School rewards completeness. A fixed rotation window rewards impact. Learning to tell the difference between useful polish and procrastination-in-disguise was one of the more practical things I took away.
+
+## What's Next
+
+My last rotation became my permanent role. I'm now an ML engineer at T&P, building out an agentic AI platform that other teams across the organization can adopt. The rotational program gave me the breadth — now I'm going deep.
+
+Looking back, the value wasn't any single rotation. It was the compound effect of being dropped into unfamiliar territory three times and figuring it out each time. New skills, new relationships, and a much clearer picture of what kind of engineer I want to be.
+
+If you're considering a rotational program: say yes to the rotations that make you a little nervous. That's the whole point.
+
