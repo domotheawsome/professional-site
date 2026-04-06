@@ -16,6 +16,18 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Ariel Meshorer — Software Engineer",
   description: "Software engineering portfolio and blog by Ariel Meshorer.",
+  metadataBase: new URL("https://meshorer.dev"),
+  openGraph: {
+    title: "Ariel Meshorer — Software Engineer",
+    description:
+      "Software engineer focused on distributed systems, ML infrastructure, and building things that scale.",
+    url: "https://meshorer.dev",
+    siteName: "Ariel Meshorer",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
