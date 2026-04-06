@@ -44,13 +44,33 @@ export default function OGImage() {
         </div>
         <div
           style={{
-            fontSize: 20,
-            color: "#999999",
-            marginTop: 40,
-            fontFamily: "monospace",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
+            marginTop: 48,
+            width: "100%",
           }}
         >
-          meshorer.dev
+          <div
+            style={{
+              fontSize: 20,
+              color: "#999999",
+              fontFamily: "monospace",
+            }}
+          >
+            meshorer.dev
+          </div>
+          <div
+            style={{
+              fontSize: 20,
+              color: "#111111",
+              border: "2px solid #111111",
+              padding: "10px 24px",
+              borderRadius: 6,
+            }}
+          >
+            Read the blog &rarr;
+          </div>
         </div>
       </div>
     ),

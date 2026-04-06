@@ -14,13 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Ariel Meshorer — Software Engineer",
-  description: "Software engineering portfolio and blog by Ariel Meshorer.",
+  title: "Ariel Meshorer — Software Engineer | Portfolio & Blog",
+  description:
+    "Software engineer focused on distributed systems, ML infrastructure, and building things that scale. Read about engineering, AI, and lessons from the field.",
   metadataBase: new URL("https://meshorer.dev"),
   openGraph: {
-    title: "Ariel Meshorer — Software Engineer",
+    title: "Ariel Meshorer — Software Engineer | Portfolio & Blog",
     description:
-      "Software engineer focused on distributed systems, ML infrastructure, and building things that scale.",
+      "Software engineer focused on distributed systems, ML infrastructure, and building things that scale. Read about engineering, AI, and lessons from the field.",
     url: "https://meshorer.dev",
     siteName: "Ariel Meshorer",
     type: "website",
